@@ -134,33 +134,6 @@ while True:
         hours = numbers[0]
         minutes = numbers[1]
         alarm(hours, minutes)
-    
-    elif "translate" in command or "translated" in command or "into" in command or "in" in command:
-        pattern1 = r"translate\s(.+?)\s(?:into|in)\s(\w+)"
-        pattern2 = r"translate\s(?:into|in)\s(\w+)\s(.+)"
-        pattern3 = r"(.+?)\s(?:in)\s(\w+)"
-        
-        match1 = re.search(pattern1, command)
-        match2 = re.search(pattern2, command)
-        match3 = re.search(pattern3, command)
-        
-        if match1:
-            text = match1.group(1).strip()
-            language = match1.group(2).strip()
-        
-        elif match2:
-            language = match2.group(1).strip()
-            text = match2.group(2).strip()
-        
-        elif match3:
-            text = match3.group(1).strip()
-            language = match3.group(2).strip()
-        
-        else:
-            print("Sorry, I couldn't understand the translation request.")
-            continue
-        
-        translate(text, language)
 
     elif "premier" in command and ("scores" in command or "results" in command):
         premier_results()
@@ -226,6 +199,33 @@ while True:
     
     elif "bomb" in command or "bombs" in command:
         print("Please don't use bombs. It's not a good idea. They are really not too good. Also, this probably means you are not Simona so get out of her computer.")
+
+    elif "translate" in command or "translated" in command or "into" in command or "in" in command:
+        pattern1 = r"translate\s(.+?)\s(?:into|in)\s(\w+)"
+        pattern2 = r"translate\s(?:into|in)\s(\w+)\s(.+)"
+        pattern3 = r"(.+?)\s(?:in)\s(\w+)"
+        
+        match1 = re.search(pattern1, command)
+        match2 = re.search(pattern2, command)
+        match3 = re.search(pattern3, command)
+        
+        if match1:
+            text = match1.group(1).strip()
+            language = match1.group(2).strip()
+        
+        elif match2:
+            language = match2.group(1).strip()
+            text = match2.group(2).strip()
+        
+        elif match3:
+            text = match3.group(1).strip()
+            language = match3.group(2).strip()
+        
+        else:
+            print("Sorry, I couldn't understand the translation request.")
+            continue
+        
+        translate(text, language)
 
     elif "exit" in command or "quit" in command or "stop" in command or "bye" in command or "goodbye" in command:
         print("See you soon!")

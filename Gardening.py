@@ -2,8 +2,10 @@ import requests
 import os
 from dotenv import load_dotenv
 
+load_dotenv()
+
 def gardening(item):
-    api = os.getenv("gardening_api")
+    api = os.getenv("gardening_api").strip()
     url = f"https://perenual.com/api/v2/species-list?key={api}&q={item}"
     response = requests.get(url)
     if response.status_code == 200 and response.status_code == 200:
