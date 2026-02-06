@@ -1,8 +1,10 @@
 import requests
+import os
+from dotenv import load_dotenv
 
 def premier_results():
     url = "https://api.football-data.org/v4/competitions/PL/matches"
-    api = '916a6d354d864b85a76c8cac155bf85d'
+    api = os.getenv("football_api")
     headers = {
         'X-Auth-Token': api
     }
@@ -17,7 +19,7 @@ def premier_results():
         print(f"{home_team} {score_home} - {score_away} {away_team}")
 def premier_table():
     url = "https://api.football-data.org/v4/competitions/PL/standings"
-    api = '916a6d354d864b85a76c8cac155bf85d'
+    api = os.getenv("football_api")
     headers = {
         'X-Auth-Token': api
     }
@@ -32,7 +34,7 @@ def premier_table():
 
 def champions_results():
     url = "https://api.football-data.org/v4/competitions/CL/matches"
-    api = '916a6d354d864b85a76c8cac155bf85d'
+    api = os.getenv("football_api")
     headers = {
         'X-Auth-Token': api
     }
@@ -50,7 +52,7 @@ def champions_results():
 
 def champions_table():
     url = "https://api.football-data.org/v4/competitions/CL/matches"
-    api = '916a6d354d864b85a76c8cac155bf85d'
+    api = os.getenv("football_api")
     headers = {
         'X-Auth-Token': api
     }
@@ -84,7 +86,7 @@ def champions_table():
 
 def serie_results():
     url = "https://api.football-data.org/v4/competitions/SA/matches"
-    api = '916a6d354d864b85a76c8cac155bf85d'
+    api = os.getenv("football_api")
     headers = {
         'X-Auth-Token': api
     }
@@ -150,7 +152,7 @@ def bundesliga_table():
 
 def la_liga_results():
     url = "https://api.football-data.org/v4/competitions/PD/matches"
-    api = '916a6d354d864b85a76c8cac155bf85d'
+    api = os.getenv("football_api")
     headers = {
         'X-Auth-Token': api
     }
@@ -168,7 +170,7 @@ def la_liga_results():
 
 def la_liga_table():
     url = "https://api.football-data.org/v4/competitions/PD/standings"
-    api = '916a6d354d864b85a76c8cac155bf85d'
+    api = os.getenv("football_api")
     headers = {
         'X-Auth-Token': api
     }
@@ -183,7 +185,7 @@ def la_liga_table():
 
 def ligue_results():
     url = "https://api.football-data.org/v4/competitions/FL1/matches"
-    api = '916a6d354d864b85a76c8cac155bf85d'
+    api = os.getenv("football_api")
     headers = {
         'X-Auth-Token': api
     }
@@ -201,7 +203,7 @@ def ligue_results():
 
 def ligue_table():
     url = "https://api.football-data.org/v4/competitions/FL1/standings"
-    api = '916a6d354d864b85a76c8cac155bf85d'
+    api = os.getenv("football_api")
     headers = {
         'X-Auth-Token': api
     }

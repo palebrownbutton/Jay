@@ -1,6 +1,8 @@
 import requests
+import os
+from dotenv import load_dotenv
 def get_weather(location):
-    api_key = "be2983c2f6b41d72fdf369282bc98540"
+    api_key = os.getenv("weather_api")
     while True:
         result = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}&units=metric")
         if result.json()["cod"] == "404":
